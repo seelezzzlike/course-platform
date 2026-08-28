@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../config/colors.dart';
 import '../../config/app_config.dart';
 import '../home/home_state_container.dart';
+import '../my_course/my_course_state_container.dart';
 import '../common/placeholder_page.dart';
 
 /// 主界面：底部导航 + 页面容器（对应 MainActivity.kt）
@@ -20,7 +21,7 @@ class _MainPageState extends State<MainPage> {
     HomeStateContainer(),
     PlaceholderPage(title: AppStrings.category),
     PlaceholderPage(title: AppStrings.course),
-    PlaceholderPage(title: AppStrings.mine),
+    MyCourseStateContainer(),
   ];
 
   @override
