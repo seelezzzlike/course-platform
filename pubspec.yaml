@@ -1,0 +1,36 @@
+name: taoyue_edu_app
+description: 桃悦智科教育平台 App（Flutter 版）
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.8.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # 网络层（对应 Retrofit + OkHttp）
+  dio: ^5.3.3
+  # 状态管理（对应 ViewModel + StateFlow）
+  provider: ^6.1.1
+  # 本地存储（对应 SharedPreferences）
+  shared_preferences: ^2.2.2
+  # 图片加载缓存（对应 Glide）
+  cached_network_image: ^3.3.1
+  # JSON 注解（对应 Gson @SerializedName）
+  json_annotation: ^4.12.0
+
+  # 常用 Material 图标
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  # 代码生成（生成 fromJson/toJson）
+  build_runner: ^2.4.8
+  json_serializable: ^6.7.1
+
+flutter:
+  uses-material-design: true
