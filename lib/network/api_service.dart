@@ -4,6 +4,7 @@ import '../data/model/category.dart';
 import '../data/model/banner.dart';
 import '../data/model/teacher.dart';
 import '../data/model/paged_list.dart';
+import '../data/model/my_course.dart';
 
 /// 后端 API 接口定义（对应 ApiService.kt）
 class ApiService {
@@ -52,10 +53,15 @@ class ApiService {
         parser: (data) => PagedList<Course>.fromJson(data, (e) => Course.fromJson(e)),
       );
 
+  /// 我的课程（已购课程列表）
+  static Future<List<MyCourse>> getMyCourses() =>
+      HttpClient.get('member/my-courses', parser: _parseListOfMyCourse);
+
   // ---- 内部解析工具 ----
   static List<T> _parseList<T>(dynamic data, T Function(Map<String, dynamic>) parser) =>
       (data as List).map((e) => parser(e as Map<String, dynamic>)).toList();
   static List<Category> _parseListOfCategory(dynamic d) => _parseList(d, Category.fromJson);
   static List<Teacher> _parseListOfTeacher(dynamic d) => _parseList(d, Teacher.fromJson);
   static List<Banner> _parseListOfBanner(dynamic d) => _parseList(d, Banner.fromJson);
+  static List<MyCourse> _parseListOfMyCourse(dynamic d) => _parseList(d, MyCourse.fromJson);
 }
